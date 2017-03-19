@@ -14,7 +14,7 @@ Documentation:
 
 STM32duino from https://github.com/rogerclarkmelbourne/Arduino_STM32
 
-Copied from https://github.com/svn2github/irmp
+Copied from https://github.com/svn2github/irmp_master
 This version is for STM32duino.
 Copy all files to the arduino/library folder.
 
