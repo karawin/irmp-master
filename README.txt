@@ -13,6 +13,7 @@ Documentation:
    http://www.mikrocontroller.net/articles/IRSND_-_english
 
 
+Copied from https://github.com/svn2github/irmp
 This version is for STM32duino.
 Copy all files to the arduino/library folder.
 
