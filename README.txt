@@ -11,3 +11,9 @@ Documentation:
 
    http://www.mikrocontroller.net/articles/IRSND
    http://www.mikrocontroller.net/articles/IRSND_-_english
+
+
+This version is for STM32duino.
+Copy all files to the arduino/library folder.
+
+Tested only with a generic blue STM32F103C IR reception.
