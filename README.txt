@@ -12,6 +12,7 @@ Documentation:
    http://www.mikrocontroller.net/articles/IRSND
    http://www.mikrocontroller.net/articles/IRSND_-_english
 
+STM32duino from https://github.com/rogerclarkmelbourne/Arduino_STM32
 
 Copied from https://github.com/svn2github/irmp
 This version is for STM32duino.
