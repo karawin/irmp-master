@@ -14,7 +14,9 @@
 
 #ifndef _IRMP_H_
 #define _IRMP_H_
+
 #include "irmpsystem.h"
+
 #ifndef IRMP_USE_AS_LIB
 #  include "irmpconfig.h"
 #endif
@@ -81,10 +83,15 @@
 #elif defined (TEENSY_ARM_CORTEX_M4)
 #  define input(x)                              ((uint8_t)(digitalReadFast(x)))
 
-#elif defined(__xtensa__)
+#elif defined(__xtensa__) 
 #  define IRMP_BIT                              IRMP_BIT_NUMBER
 #  define input(x)                              GPIO_INPUT_GET(IRMP_BIT_NUMBER)
+#elif defined(BOARD_generic_stm32f103c)  
+#  define IRMP_BIT                              IRMP_BIT_NUMBER
+#  define input(x)                              digitalRead(IRMP_BIT_NUMBER)
 #endif
+
+
 
 #if IRMP_SUPPORT_TECHNICS_PROTOCOL == 1
 #  undef IRMP_SUPPORT_MATSUSHITA_PROTOCOL

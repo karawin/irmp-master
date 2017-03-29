@@ -11,11 +11,3 @@ Documentation:
 
    http://www.mikrocontroller.net/articles/IRSND
    http://www.mikrocontroller.net/articles/IRSND_-_english
-
-STM32duino from https://github.com/rogerclarkmelbourne/Arduino_STM32
-
-Copied from https://github.com/svn2github/irmp_master
-This version is for STM32duino.
-Copy all files to the arduino/library folder.
-
-Tested only with a generic blue STM32F103C IR reception.

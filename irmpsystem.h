@@ -34,11 +34,18 @@
 #elif defined(STM32F10X_LD) || defined(STM32F10X_LD_VL) \
    || defined(STM32F10X_MD) || defined(STM32F10X_MD_VL) \
    || defined(STM32F10X_HD) || defined(STM32F10X_HD_VL) \
-   || defined(STM32F10X_XL) || defined(STM32F10X_CL)   || defined(BOARD_generic_stm32f103c)        // ARM STM32
+   || defined(STM32F10X_XL) || defined(STM32F10X_CL)   		// ARM STM32
 //#  include <stm32f10x.h>
 #  define ARM_STM32
 #  define ARM_STM32F10X
 //#  define F_CPU (SysCtlClockGet())
+#elif    defined(BOARD_generic_stm32f103c)   				// STM32DUINO    
+#include <Arduino.h>
+//#  include <io.h>
+#  define uint_fast8_t uint8_t
+#  define uint_fast16_t uint16_t
+
+ 
 #elif defined(STM32F4XX)                                                            // ARM STM32
 #  include <stm32f4xx.h>
 #  define ARM_STM32
@@ -130,6 +137,7 @@ typedef unsigned short                  uint16_t;
 #  include "stm32f10x_rcc.h"
 #  include "stm32f10x_tim.h"
 #  include "misc.h"
+
 #  define PROGMEM
 #  define memcpy_P                      memcpy
 
@@ -146,9 +154,12 @@ typedef unsigned short                  uint16_t;
 #  define PROGMEM
 #  define memcpy_P                      memcpy
 
-#elif defined(__xtensa__)
+#elif defined(__xtensa__) 
 #  define PROGMEM
 #  define memcpy_P                      memcpy
+
+#elif defined(BOARD_generic_stm32f103c)  
+#  define PROGMEM
 
 #elif defined(__MBED__)
 #  define PROGMEM
@@ -161,12 +172,11 @@ typedef unsigned short                  uint16_t;
 #endif
 
 #if defined(PIC_CCS) || defined(PIC_C18) || defined(ARM_STM32) || defined(STELLARIS_ARM_CORTEX_M4)
-/*
 typedef unsigned char                   uint8_t;
 typedef unsigned short                  uint16_t;
 typedef unsigned char                   uint_fast8_t;
 typedef unsigned short                  uint_fast16_t;
-*/
+
 #include "stdint.h"
 #endif
 
@@ -190,7 +200,6 @@ typedef unsigned short                  uint_fast16_t;
 #else
 #define IRMP_PACKED_STRUCT              __attribute__ ((__packed__))
 #endif
-
 typedef struct IRMP_PACKED_STRUCT
 {
     uint8_t                             protocol;                                   // protocol, e.g. NEC_PROTOCOL
